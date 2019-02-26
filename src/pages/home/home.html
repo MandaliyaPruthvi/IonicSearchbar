@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title style="text-align: center!important;">Ionic | Searchbar </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      Search for Formula One Drivers
+    </ion-card-header>
+    <ion-card-content>
+      <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"></ion-searchbar>
+      <ion-list>
+        <ion-item *ngFor="let item of jsonItems" (click)="list(item.title)">
+          {{item.title}}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <p padding-left style="text-align: center!important;">Created By: <a href="https://github.com/MandaliyaPruthvi">Pruthvi
+        Mandaliya</a></p>
+  </ion-toolbar>
+</ion-footer>
